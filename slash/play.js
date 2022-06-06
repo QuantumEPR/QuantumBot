@@ -82,9 +82,13 @@ module.exports = {
                 return interaction.editReply("No results.")
             }
             const song = result.tracks[0]
+            const tracksInfo = result.tracks.map((r, i) => `${i}: ${r.title} - ${r.url}`).join('\n')
             await queue.addTrack(song)
             embed
-                .setDescription(`**[${song.title}](${song.url})** have been added to the Queue.`)
+                .setDescription(
+                    `${tracksInfo}\n
+                    **[${song.title}](${song.url})** have been added to the Queue.`
+                )
                 .setThumbnail(song.thumbnail)
                 .setFooter({ text: `Duration: ${song.duration}` })
         }
