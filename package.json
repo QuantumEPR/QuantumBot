@@ -1,0 +1,23 @@
+{
+  "name": "quantumbot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "@discordjs/builders": "^0.14.0",
+    "@discordjs/opus": "^0.7.0",
+    "@discordjs/rest": "^0.5.0",
+    "@discordjs/voice": "^0.10.0",
+    "discord-player": "^5.2.2",
+    "discord.js": "^13.8.0",
+    "dotenv": "^16.0.1",
+    "ffmpeg": "^0.0.4",
+    "fluent-ffmpeg": "^2.1.2",
+    "ytdl-core": "^4.11.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "description": ""
+}
