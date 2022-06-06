@@ -69,9 +69,9 @@ module.exports = {
             const playlist = result.playlist
             await queue.addTrack(result.tracks)
             embed
-                .setDescription(`**${result.tracks.length} songs from [${playlist.title}](${playlist.url})** have been added to the Queue.`)
-                .setThumbnail(song.thumbnail)
-                .setFooter({ text: `Duration: ${song.duration}` })
+                .setDescription(`**${playlist.length} songs from [${playlist.title}](${playlist.url})** have been added to the Queue.`)
+                .setThumbnail(playlist.thumbnail)
+                .setFooter({ text: `Duration: ${playlist.duration}` })
         } else if (interaction.options.getSubcommand() === "search") {
             let url = interaction.options.getString("searchterms")
             const result = await client.player.search(url, {
@@ -82,7 +82,8 @@ module.exports = {
                 return interaction.editReply("No results.")
             }
             const song = result.tracks[0]
-            const tracksInfo = result.tracks.map((r, i) => `${i}: ${r.title} - ${r.url}`).join('\n')
+            const tracksInfo = result.tracks.map((r, i) => `${i + 1}: ${r.title} - ${r.url}`).join('\n')
+
             await queue.addTrack(song)
             embed
                 .setDescription(
