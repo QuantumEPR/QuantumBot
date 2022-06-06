@@ -7,7 +7,7 @@ module.exports = {
     .setDescription("displays the current song queue")
     .addNumberOption( option => option.setName("page").setDescription("Page number of the queue").setMinValue(1)),
     run: async ({ client, interaction }) => {
-        const queue = client.player.getQueue(ineraction.guildId)
+        const queue = client.player.getQueue(interaction.guildId)
         if (!queue || !queue.playing) {
             return await interaction.editReply("There are no songs in the queue")
         }

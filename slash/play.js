@@ -67,10 +67,10 @@ module.exports = {
                 return interaction.editReply("No results.")
             }
             const playlist = result.playlist
-            console.log(playlist)
+            console.log(Object.keys(playlist))
             await queue.addTracks(result.tracks)
             embed
-                .setDescription(`**${playlist.length} songs from [${playlist.title}](${playlist.url})** have been added to the Queue.`)
+                .setDescription(`**[${playlist.title}](${playlist.url})** has been added to the Queue.`)
                 .setThumbnail(playlist.thumbnail)
                 .setFooter({ text: `Duration: ${playlist.duration}` })
         } else if (interaction.options.getSubcommand() === "search") {
