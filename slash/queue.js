@@ -22,7 +22,7 @@ module.exports = {
         })
 
         const currentSong = queue.current
-        await interaction.editReplay({
+        await interaction.editReply({
             embeds: [
                 new MessageEmbed()
                     .setDescription(`**Currently Playing**\n` + (currentSong ? `\`[${currentSong.duration}]\` ${currentSong.title} -- <@${currentSong.requestedBy.id}>` : "None" ) + `\n\n**Queue**\n${queueString}`)
