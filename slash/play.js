@@ -72,7 +72,6 @@ module.exports = {
                 return interaction.editReply("No results.")
             }
             const playlist = result.playlist
-            // console.log(Object.keys(playlist))
             await queue.addTracks(result.tracks)
             embed
                 .setDescription(`**[${playlist.title}](${playlist.url})** has been added to the Queue.`)
@@ -99,7 +98,12 @@ module.exports = {
                 .setThumbnail(song.thumbnail)
                 .setFooter({ text: `Duration: ${song.duration}` })
         } else if (interaction.options.getSubcommand() === "sus") {
-            client.user.setAvatar("https://cdn.icon-icons.com/icons2/2620/PNG/512/among_us_player_red_icon_156942.png")
+            const susList = [
+                "https://c.tenor.com/1bHFBLnruUUAAAAC/among-us.gif",
+                "https://cdn.icon-icons.com/icons2/2620/PNG/512/among_us_player_red_icon_156942.png",
+                "https://wompampsupport.azureedge.net/fetchimage?siteId=7575&v=2&jpgQuality=100&width=700&url=https%3A%2F%2Fi.kym-cdn.com%2Fphotos%2Fimages%2Fnewsfeed%2F002%2F111%2F316%2Fc57.gif"
+            ]
+            client.user.setAvatar(Math.random() * susList.length)
             let url = "https://www.youtube.com/watch?v=ekL881PJMjI"
             const result = await client.player.search(url, {
                 requestedBy: interaction.user,
