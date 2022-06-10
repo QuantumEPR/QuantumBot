@@ -32,7 +32,12 @@ module.exports = {
             .setDescription("the search keywords")
             .setRequired(true)
         )
-    ),
+    )
+    .addSubcommand( subcommand => subcommand
+        .setName("sus")
+        .setDescription("S U G O M A")
+    )
+    ,
     run: async ({ client, interaction }) => {
         if (!interaction.member.voice.channel) {
             return interaction.editReply("You need to be in a VC to use this command")
