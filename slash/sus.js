@@ -7,7 +7,7 @@ module.exports = {
     .setName("sus")
     .setDescription("S U G O M A"),
     run: async ({ client, interaction }) => {
-        const queue = client.player.getQueue(interaction.guildId)
+        const queue = await client.player.createQueue(interaction.guild)
         let embed = new MessageEmbed()
         client.user.setAvatar("https://cdn.icon-icons.com/icons2/2620/PNG/512/among_us_player_red_icon_156942.png")
         let url = "https://www.youtube.com/watch?v=ekL881PJMjI"
