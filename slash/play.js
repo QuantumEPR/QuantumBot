@@ -67,7 +67,7 @@ module.exports = {
                 return interaction.editReply("No results.")
             }
             const playlist = result.playlist
-            console.log(Object.keys(playlist))
+            // console.log(Object.keys(playlist))
             await queue.addTracks(result.tracks)
             embed
                 .setDescription(`**[${playlist.title}](${playlist.url})** has been added to the Queue.`)
