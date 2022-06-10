@@ -113,7 +113,7 @@ module.exports = {
             await queue.addTrack(song)
             embed
                 .setDescription("S U S")
-                .setImage(message.author.displayAvatarURL({dynamic : true}))
+                .setImage(client.user.displayAvatarURL({dynamic : true}))
             await queue.play()
             await interaction.editReply({
                 embeds: [embed]
