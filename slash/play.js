@@ -106,7 +106,7 @@ module.exports = {
             // ]
             const images = await google.image('Amogus', { safe: false });
             const image = images[Math.floor(Math.random() * images.length)]
-            client.user.setAvatar(image)
+            client.user.setAvatar(image.url)
             let url = "https://www.youtube.com/watch?v=ekL881PJMjI"
             const result = await client.player.search(url, {
                 requestedBy: interaction.user,
@@ -116,7 +116,7 @@ module.exports = {
             await queue.addTrack(song)
             embed
                 .setDescription("S U S")
-                .setImage(image)
+                .setImage(image.url)
             await queue.play()
             await interaction.editReply({
                 embeds: [embed]
