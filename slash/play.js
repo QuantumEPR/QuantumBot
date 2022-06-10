@@ -93,6 +93,21 @@ module.exports = {
                 )
                 .setThumbnail(song.thumbnail)
                 .setFooter({ text: `Duration: ${song.duration}` })
+        } else if (interaction.options.getSubcommand() === "sus") {
+            client.user.setAvatar("https://cdn.icon-icons.com/icons2/2620/PNG/512/among_us_player_red_icon_156942.png")
+            let url = "https://www.youtube.com/watch?v=ekL881PJMjI"
+            const result = await client.player.search(url, {
+                requestedBy: interaction.user,
+                searchEngine: QueryType.YOUTUBE_VIDEO
+            })
+            const song = result.tracks[0]
+            await queue.addTrack(song)
+            embed
+                .setDescription("S U S")
+            await queue.play()
+            await interaction.editReply({
+                embeds: [embed]
+            })
         }
         if (!queue.playing) await queue.play()
         await interaction.editReply({
