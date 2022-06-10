@@ -103,7 +103,7 @@ module.exports = {
                 "https://cdn.icon-icons.com/icons2/2620/PNG/512/among_us_player_red_icon_156942.png",
                 "https://wompampsupport.azureedge.net/fetchimage?siteId=7575&v=2&jpgQuality=100&width=700&url=https%3A%2F%2Fi.kym-cdn.com%2Fphotos%2Fimages%2Fnewsfeed%2F002%2F111%2F316%2Fc57.gif"
             ]
-            client.user.setAvatar(Math.random() * susList.length)
+            client.user.setAvatar(susList[Math.random() * susList.length])
             let url = "https://www.youtube.com/watch?v=ekL881PJMjI"
             const result = await client.player.search(url, {
                 requestedBy: interaction.user,
