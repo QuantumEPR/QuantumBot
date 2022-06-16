@@ -23,8 +23,12 @@ const client = new Discord.Client({
 client.slashcommands = new Discord.Collection()
 client.player = new Player(client, {
     ytdlOptions: {
+        filter: "audioonly",
         quality: "highestaudio",
-        highWaterMark: 1 << 25
+        highWaterMark: 1 << 62,
+        liveBuffer: 1 << 62,
+        dlChunkSize: 0,
+        bitrate: 128,
     }
 })
 
